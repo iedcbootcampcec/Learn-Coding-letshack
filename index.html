@@ -1,0 +1,451 @@
+ <html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hacktoberfest 2021</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="js/responsiveslides.min.js"></script>
+  <style type="text/css" media="all">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      top: 0;
+      left: 0;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      color: #fff;
+      padding: 0;
+      height: 220vh;
+      margin: 0;
+      background: #091921;
+      padding-bottom: 10%;
+    }
+
+    body.disabledScroll {
+      overflow: hidden;
+    }
+
+    header {
+      background: #000;
+      position: fixed;
+      width: 100%;
+      height: 85px;
+      float: left;
+      border-bottom: 1.25px #111 solid;
+      z-index: 100;
+      box-shadow: 0px 8px 40px 2px rgba(0, 0, 0, 0.75)
+        /**rgba(252, 0, 73, 0.9);**/
+    }
+
+    .homepage {
+      position: absolute;
+      border-radius: 9px;
+      border: 5px solid black;
+      top: 200px;
+      left: 0;
+      background: #0f0f0f;
+      width: 80%;
+      height: 180vh;
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+
+    .logo {
+      position: absolute;
+      text-decoration: none;
+      text-transform: uppercase;
+      top: 10px;
+      font-family: 'Poppins', sans-serif;
+      left: 3px;
+      color: #ff0029;
+      font-weight: 800;
+      -webkit-tap-highlight-color: transparent;
+      width: 4.125rem;
+      height: 3.125rem;
+      opacity: 0;
+      animation: fadeIn 0.6s linear forwards;
+      animation-delay: .15s;
+      color: #ff0029;
+      font-size: 30px;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+
+    #svg {
+      position: relative;
+      top: -5%;
+      left: 0.0625;
+      height: 3.1rem;
+      width: 3.1rem;
+    }
+
+    .logo_txt {
+      position: absolute;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: 'Poppins', sans-serif;
+      top: 20%;
+      left: 10%;
+      /**color: #ff0029;**/
+      width: 50px;
+      height: auto;
+    }
+
+    .txt {
+      position: relative;
+      margin: 0;
+      user-select: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow-wrap: break-word;
+      font-size: 18px;
+      /*-webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px white;*/
+      font-weight: 900;
+      letter-spacing: 1.05px;
+      width:130px;
+      height: auto;
+      opacity: 0;
+      animation: logo_anim 0.45s linear forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes logo_anim {
+      0% {
+        opacity: 0;
+        transform: translateX(-20px);
+
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .txt span {
+      color: #ff0040;
+      position: relative;
+      left: 12px;
+      font-size: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .full_logo {
+      -webkit-tap-highdark-color: rgba(0, 0, 0, 0);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: center;
+      color: #fff;
+      z-index: 101;
+      background: #ffffff00;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      width: 50px;
+      -webkit-tap-highlight-color: transparent;
+      height: 50px;
+      overflow: hidden;
+      animation: menu_anim .4s linear forwards;
+      opacity: 0;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+      animation-delay: .25s;
+      -webkit-tap-highdark-color: #ffffff00;
+    }
+
+    @keyframes menu_anim {
+      0% {
+        opacity: 0;
+        transform: scale(0)
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1.2);
+        top: 40%;
+        right: 10%;
+        transform: scaleX(-1);
+      }
+    }
+
+    .toggle span {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-left: 5px;
+      padding-top: 5px;
+      display: block;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      font-size: 10px;
+      line-height: 30px;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+      transform: scale(1.2);
+    }
+
+    .toggle span:nth-child(2) {
+      background: transparent;
+      color: #ff0040;
+      padding-top: 8px;
+      opacity: 0;
+      transform: scaleX(-1.5);
+      text-shadow: 0 0 20px #ff0040, 0 0 30px #ff0040, 0 0 40px #ff0040, 0 0 55px #ff0040, 0 0 75px #ff0040, 0px 0px 14px #ff0040;
+    }
+
+    .toggle span.active {
+      display: block;
+      opacity: 1;
+      transform: scale(1.2);
+      transform: translateY(-100%);
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+
+    }
+
+    .menu {
+      position: fixed;
+      left: -100%;
+      width: 100%;
+      border: 2px solid #000;
+      border-bottom: 2px solid #ff0029;
+      border-radius: 4px;
+      height: 100%;
+      top: 0;
+      background: #1a1a1a;
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+    }
+
+    .menu.active {
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      position: fixed;
+      transition: 0.5s ease-in-out;
+      top: 0;
+      left: 0;
+      opacity: 1;
+    }
+
+    .menuContents {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 220px;
+      position: relative;
+
+    }
+
+    .menuContents a {
+      text-decoration: none;
+      display: block;
+      font-weight: 900;
+      color: #818181;
+      margin-bottom: 25px;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 2px;
+      font-size: 1.62rem;
+      /*1.695rem;*/
+      text-align: center;
+      width: auto;
+      user-select: none;
+      height: auto;
+      text-transform: uppercase;
+      transition: all .225s ease-in-out;
+      /*text-shadow: 0 0 10px #616161, 0 0 20px #222;
+    -webkit-text-fill-color: #ffffff00;
+    -webkit-text-stroke-width: .7px;*/
+      -webkit-tap-highdark-color: #ffffff00;
+    }
+
+    .menuContents a:hover {
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      font-weight: 900;
+      transition: all 0.25s ease-in-out;
+      transform: scale(1.15);
+      letter-spacing: 2px;
+    }
+
+    .social {
+      position: absolute;
+      z-index: 500;
+      width: auto;
+      height: auto;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 15px;
+      margin-right: 15px;
+      text-align: bottom;
+    }
+
+    .social a {
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 20px;
+      padding: 9px;
+      border-radius: 50%;
+      background: #222;
+      color: #717171;
+      width: auto;
+      user-select: none;
+      height: auto;
+      transition: all .325s ease-in-out;
+      /*text-shadow: 0 0 10px #616161, 0 0 20px #222;
+    -webkit-text-fill-color: #ffffff00;
+    -webkit-text-stroke-width: .7px;*/
+    }
+
+    .social a:hover {
+      color: #ff0040;
+      transition: all 0.5s ease-in-out;
+      transform: scale(1.05);
+    }
+  </style>
+  <script>
+    $(function() {
+      $(".rslides").responsiveSlides({
+        auto: true, // Boolean: Animate automatically, true or false
+        speed: 500, // Integer: Speed of the transition, in milliseconds
+        timeout: 1500, // Integer: Time between slide transitions, in milliseconds
+        pager: false, // Boolean: Show pager, true or false
+        nav: false, // Boolean: Show navigation, true or false
+        random: true, // Boolean: Randomize the order of the slides, true or false
+        pause: false, // Boolean: Pause on hover, true or false
+        pauseControls: false, // Boolean: Pause when hovering controls, true or false
+        prevText: "Previous", // String: Text for the "previous" button
+        nextText: "Next", // String: Text for the "next" button
+        maxwidth: "", // Integer: Max-width of the slideshow, in pixels
+        navContainer: "", // Selector: Where controls should be appended to, default is after the 'ul'
+        manualControls: "", // Selector: Declare custom pager navigation
+        namespace: "rslides", // String: Change the default namespace used
+        before: function() {}, // Function: Before callback
+        after: function() {} // Function: After callback
+      });
+    });
+    //NavBar Menu Code
+    $(document).ready(function() {
+      $('.toggle').click(function() {
+        $('.menuBtn').toggleClass('active')
+        $('.menu').toggleClass('active')
+        $('body').toggleClass('disabledScroll')
+      })
+    })
+  </script>
+</head>
+
+<body bgcolor="#111" text="#fff">
+  <div class="page">
+    <header>
+      <nav class="navbar">
+        <div class="full_logo">
+          <a href="index.html" class="logo">
+            <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0, 0, 400,400">
+              <g id="svgg"></g>
+            </svg>
+          </a>
+          <a class="logo_txt" href="index.html">
+            <p class="txt">Hacktoberfest <span> - 2021</span></p>
+          </a>
+        </div>
+        <a class="toggle" href="javascript:void(0)">
+          <span class="menuBtn"><i class="material-icons">short_text</i></span>
+          <span class="menuBtn"><i class="material-icons">close</i></span>
+        </a>
+        <div class="menu">
+          <div class="menuContents">
+            <a href="index.html">Home</a>
+            <a href="assets/html/sign-in.html">Login</a>
+            <a href="assets/html/watch.html">Watch</a>
+            <a href="assets/html/space.html">News</a>
+            <a href="assets/html/about-us.html">About</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="homepage" style=" padding: 40px; border: 2px solid #222; border-radius: 9px;">
+      <!--Headings of different sizes-->
+      <h1>This is the largest heading<tt>[H1]</tt></h1><br />
+      <h2>This is a heading<tt>[H2]</tt></h2><br />
+      <h3>This is a heading<tt>[H3]</tt></h3><br />
+      <h4>This is a heading<tt>[H4]</tt></h4><br />
+      <h5>This is a heading<tt>[H5]</tt></h5><br />
+      <h6>This is the smallest heading[H6]</h6><br />
+      <hr color='#444' />
+      <br />
+      <!--Bold Text-->
+      <font color='#ff0050'>
+        <b>Hello Everyone!</b><br />
+      </font>
+      <!--Italic Text-->
+      <font color='#fff'>
+        <i>Hello Everyone!</i><br />
+      </font>
+      <!--Underlined Text-->
+      <font color='#00fff2'>
+        <u>Hello Everyone!</u><br />
+      </font>
+      <!--Break rule-->
+      <br />
+      <!--Horizontal Rule-->
+      <hr color='#444'>
+      <!--Paragraph--><br />
+      <p>This is a paragraph</p><br />
+      <!--Typewriter text-->
+      <tt>This is a Typewriter text</tt>
+      <br /><br />
+      <iframe width="220px" height="185px" style="border-radius: 9px; overflow: hidden; border: 0;" src="https://media.tenor.com/images/4c84b661183dfb65833a97d57400597a/tenor.gif?ctx=share"></iframe>
+    </main>
+  </div>
+</body>
+
+</html>
