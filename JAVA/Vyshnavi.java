@@ -1,11 +1,9 @@
-class aiswarya {
+class Vyshnavi {
     public static void main(String[] args) {
 
-    String name = "aiswarya";
-
-    int age =21 ;
-
-    String username = "aiswarya23";
+    String name = "Vyshnavi V";
+    int age = 19 ;
+    String username = "Vyshnavi-V";
 
         System.out.println("Hello!\nName: "+name+"\nAge: "+age+ "\nUsername: "+username);
     }
