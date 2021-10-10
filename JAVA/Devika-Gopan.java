@@ -1,5 +1,7 @@
-class  Devika-Gopan{
-    public static void main(String[] args) {
+class  Devika-Gopan
+{
+    public static void main(String[] args) 
+    {
 
     String name = "Devika Gopan";
     int age = 21 ;
