@@ -1,7 +1,7 @@
 #include<stdio.h>
  int main()
   {
-     printf("Hii!!\n");
+     printf("Hey!!\n");
      printf("Name   :Vyshnavi V\n");
      printf("Age    : 19\n");
      printf("Username : Vyshnavi-V\n");
