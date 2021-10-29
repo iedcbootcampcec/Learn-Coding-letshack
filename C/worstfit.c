@@ -1,3 +1,4 @@
+//worstfit
 #include<stdio.h>
 void main()
 {
